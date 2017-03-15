@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/SunnyE/webStore#readme",
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "morgan": "^1.8.1"
   }
 }
