@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/SunnyE/webStore/issues"
   },
-  "homepage": "https://github.com/SunnyE/webStore#readme"
+  "homepage": "https://github.com/SunnyE/webStore#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
 }
