@@ -20,7 +20,7 @@ var UserSchema = new mongoose.Schema({
 
     }]
     
-})
+});
 
 UserSchema.pre('save', function(next){
     var user = this;
@@ -38,9 +38,11 @@ UserSchema.pre('save', function(next){
 
 UserSchema.pre('save', function(next){
     var user = this;
-    
-})
+
+});
 
 UserSchema.methods.comparePassword = function (password) {
     return bcrypt.compareSync(password, this.password)
-}
+};
+
+modue.exports = mongoose.model('User', UserSchema); 
