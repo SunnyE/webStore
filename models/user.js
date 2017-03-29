@@ -29,9 +29,18 @@ UserSchema.pre('save', function(next){
         if (err) return next(err);
 
         bcrypt.hash(user.password, salt, null, function(err, hash){
-            if (err) return(next(err))
-
+            if (err) return(next(err));
             user.password = hash;
-        })
+            next(); 
+        });
     });
+});
+
+UserSchema.pre('save', function(next){
+    var user = this;
+    
 })
+
+UserSchema.methods.comparePassword = function (password) {
+    return bcrypt.compareSync(password, this.password)
+}
