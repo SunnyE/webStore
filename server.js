@@ -1,10 +1,18 @@
 var express = require('express');
 var morgan = require('morgan');
+var mongoose = require('mongoose'); 
 
 var app = express();
 
+mongoose.connect('mongodb://root:12345@ds147520.mlab.com:47520/ecommerce', function (err){
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("connected to database");
+    }
+})
 // middle war 
-app.use(morgan(dev));
+app.use(morgan('dev'));
 
 app.get('/', function(req, res) {
     var name = 'Ethan';
