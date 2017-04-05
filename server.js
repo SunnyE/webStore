@@ -7,6 +7,8 @@ var User = require('./models/user');
 
 var app = express();
 
+mongoose.Promise = Promise;
+
 mongoose.connect('mongodb://root:12345@ds147520.mlab.com:47520/ecommerce', function (err){
     if (err) {
         console.log(err);
@@ -19,10 +21,10 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
-app.get('/', function(req, res) {
-    var name = 'Ethan';
-    res.json("My name is " + name); 
-});
+// app.get('/', function(req, res) {
+//     var name = 'Ethan';
+//     res.json("My name is " + name); 
+// });
 
 app.post('/create-user', function(req,res, next) {
     var user = new User();
